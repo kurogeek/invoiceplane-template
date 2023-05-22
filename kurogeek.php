@@ -104,7 +104,7 @@
 </header>
 
 <main>
-
+<?php print_r($custom_fields); ?>
     <div class="invoice-details clearfix">
         <table>
             <tr>
