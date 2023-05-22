@@ -22,8 +22,8 @@
             <b><?php _htmlsc(format_client($invoice)); ?></b>
         </div>
         <?php
-        if ($invoice->client_tax_id) {
-            echo '<div>Tax ID: ' . $invoice->client_tax_id . '</div>';
+        if ($invoice->client_custom_tax_id) {
+            echo '<div>Tax ID: ' . $invoice->client_custom_tax_id . '</div>';
         } else if ($invoice->client_vat_id) {
             echo '<div>' . trans('vat_id_short') . ': ' . $invoice->client_vat_id . '</div>';
         } else if ($invoice->client_tax_code) {
@@ -65,8 +65,8 @@
             <b><?php _htmlsc($invoice->user_name); ?></b>
         </div>
         <?php 
-        if ($invoice->user_tax_id) {
-            echo '<div>Tax ID: ' . $invoice->user_tax_id . '</div>';
+        if ($invoice->user_custom_tax_id) {
+            echo '<div>Tax ID: ' . $invoice->user_custom_tax_id . '</div>';
         } else if ($invoice->user_vat_id) {
             echo '<div>' . trans('vat_id_short') . ': ' . $invoice->user_vat_id . '</div>';
         } else if ($invoice->user_tax_code) {
