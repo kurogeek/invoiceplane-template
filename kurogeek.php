@@ -104,13 +104,15 @@
 </header>
 
 <main>
-<?php print_r($custom_fields); ?>
+
     <div class="invoice-details clearfix">
         <table>
-            <tr>
-                <td>Project: </td>
-                <td><?php echo $custom_fields['invoice']['Project'] ?></td>
-            </tr>
+            <?php if ($custom_fields['invoice']['Project']): ?>
+                <tr>
+                    <td>Project: </td>
+                    <td><?php echo $custom_fields['invoice']['Project'] ?></td>
+                </tr>
+            <?php endif; ?>
             <tr>
                 <td><?php echo trans('invoice_date') . ':'; ?></td>
                 <td><?php echo date_from_mysql($invoice->invoice_date_created, true); ?></td>
