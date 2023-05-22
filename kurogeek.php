@@ -108,6 +108,10 @@
     <div class="invoice-details clearfix">
         <table>
             <tr>
+                <td>Project: </td>
+                <td><?php echo $custom_fields['invoice']['Project'] ?></td>
+            </tr>
+            <tr>
                 <td><?php echo trans('invoice_date') . ':'; ?></td>
                 <td><?php echo date_from_mysql($invoice->invoice_date_created, true); ?></td>
             </tr>
@@ -115,10 +119,10 @@
                 <td><?php echo trans('due_date') . ': '; ?></td>
                 <td><?php echo date_from_mysql($invoice->invoice_date_due, true); ?></td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td><?php echo trans('amount_due') . ': '; ?></td>
                 <td><?php echo format_currency($invoice->invoice_balance); ?></td>
-            </tr>
+            </tr> -->
             <?php if ($payment_method): ?>
                 <tr>
                     <td><?php echo trans('payment_method') . ': '; ?></td>
