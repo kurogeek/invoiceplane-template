@@ -227,6 +227,8 @@
                 <b><?php echo format_currency($invoice->invoice_total); ?></b>
             </td>
         </tr>
+
+        <?php if ($invoice->invoice_paid != 0): ?>
         <tr>
             <td <?php echo($show_item_discounts ? 'colspan="5"' : 'colspan="4"'); ?> class="text-right">
                 <?php _trans('paid'); ?>
@@ -243,6 +245,7 @@
                 <b><?php echo format_currency($invoice->invoice_balance); ?></b>
             </td>
         </tr>
+        <?php endif; ?>
         </tbody>
     </table>
 
@@ -251,7 +254,7 @@
 <footer>
     <?php if ($invoice->invoice_terms) : ?>
         <div class="notes">
-            <b><?php _trans('terms'); ?></b><br/>
+            <b><?php _trans('notes'); ?></b><br/>
             <?php echo nl2br(htmlsc($invoice->invoice_terms)); ?>
         </div>
     <?php endif; ?>
