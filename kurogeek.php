@@ -59,8 +59,7 @@
     </div>
     <div id="company">
         <div>
-            <b>FROM: </b><br>
-            <b><?php _htmlsc($invoice->user_name); ?></b>
+            <b>FROM: <?php _htmlsc($invoice->user_name); ?></b>
         </div>
         <?php 
         if ($invoice->user_vat_id) {
