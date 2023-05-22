@@ -14,8 +14,11 @@
         <?php echo invoice_logo_pdf(); ?>
     </div>
 
+    <hr>
+
     <div id="client">
         <div>
+            <b>BILL TO:</b>
             <b><?php _htmlsc(format_client($invoice)); ?></b>
         </div>
         <?php if ($invoice->client_vat_id) {
@@ -55,7 +58,10 @@
 
     </div>
     <div id="company">
-        <div><b><?php _htmlsc($invoice->user_name); ?></b></div>
+        <div>
+            <b>FROM: </b>
+            <b><?php _htmlsc($invoice->user_name); ?></b>
+        </div>
         <?php if ($invoice->user_vat_id) {
             echo '<div>' . trans('vat_id_short') . ': ' . $invoice->user_vat_id . '</div>';
         }
